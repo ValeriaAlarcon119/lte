@@ -29,7 +29,7 @@
       <td>{{$facultad->nomfacultad}}</td>
       <td>
         <a class ="btn btn-primary">Editar</a>
-        <a class ="btn btn-danger">Eliminar</a>
+        <a class ="btn btn-danger" href="{{route('eliminarFacultad', $facultad->codfacultad)}}">Eliminar</a>
     </td>
     </tr>
     @endforeach
