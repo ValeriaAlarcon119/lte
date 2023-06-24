@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Str;
 
-class FacultadesSeeders extends Seeder
+class FacultadaesSeeders extends Seeder
 {
     /**
      * Run the database seeds.
@@ -19,27 +19,29 @@ class FacultadesSeeders extends Seeder
     {
         $datos = [
             [
-                'codFacultad'=> '10',
-                'nomFacultad'=> 'Artes',
+                'codfacultad'=> '10',
+                'nomfacultad'=> 'Ingenieria',
             ],
             [
-                'codFacultad'=> '11',
-                'nomFacultad'=> 'Ingenieria',
+                'codfacultad'=> '11',
+                'nomfacultad'=> 'Exactas',
             ],
             [
-                'codFacultad'=> '12',
-                'nomFacultad'=> 'Derecho',
+                'codfacultad'=> '12',
+                'nomfacultad'=> 'Humanas',
             ],
             [
-                'codFacultad'=> '13',
-                'nomFacultad'=> 'Educacion',
+                'codfacultad'=> '13',
+                'nomfacultad'=> 'Educacion',
             ],
             [
-                'codFacultad'=> '14',
-                'nomFacultad'=> 'Ciencias exactas y naturales',
+                'codfacultad'=> '14',
+                'nomfacultad'=> 'Ciencias exactas y naturales',
             ]
         ];
 
             DB::table('facultades')->insert($datos); 
     }
 }
+
+

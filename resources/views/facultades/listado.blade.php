@@ -4,7 +4,7 @@
 
 @section('content_header')
     <h1>Facultades</h1>
-    <p>Listado de Programas</p>
+    <p>Listado de Facultades</p>
     <a class ="btn btn-info" href="/facultades/registrar">Adicionar</a>
     <table class="table">
   <thead>
@@ -12,7 +12,7 @@
       <th scope="col">#</th>
       <th scope="col">Codigo</th>
       <th scope="col">Nombre</th>
-      <th scope="col">asdfgh</th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -59,7 +59,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Programas</h1>
+    <h1>Facultades</h1>
 
 
 @stop

@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('programas', function (Blueprint $table) {
-            $table->char('codprograma',2);
+            $table-> char('codprograma',2);
             $table->char('nomprograma',30);
             $table->char('facultad', 2);
             $table->primary('codprograma',2);
