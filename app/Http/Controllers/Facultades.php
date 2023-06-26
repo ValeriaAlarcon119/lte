@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Facultad;
+use App\Models\Programa;
 
 class Facultades extends Controller
 {
@@ -16,18 +17,64 @@ class Facultades extends Controller
         return view('facultades.form_registro');
     }
 
+    public function no_existe_facultad(){
+        return view('facultades.no_existe_facultad');
+    }
+
+    public function existe_programa_facultad(){
+        return view('facultades.existe_programa_facultad');
+    }
+
     public function registrar(Request $request){
         $facultad = new Facultad();
         $facultad->codfacultad = $request->input('codfacultad');
         $facultad->nomfacultad = $request->input('nomfacultad');
-        $facultad->save();
-        return redirect()->route('listadoFacultades');
+        $facultades = DB::table('facultades')
+            ->where('codfacultad', $facultad->codfacultad)
+            ->get();
+        if(sizeof($facultades) > 0) {
+            // Existe facultad
+            return redirect()->route('noExisteFacultad');
+        } else {
+            $facultad->save();
+            return redirect()->route('listadoFacultades');
+        }
     }
 
     public function eliminar($id){
         // Busca el registro en la tabla con el respectivo codigo
         $facultad = Facultad::findOrFail($id);
-        $facultad->delete();
+        if($facultad->codfacultad) {
+            $programas = DB::table('programas')
+            ->where('facultad', $facultad->codfacultad)
+            ->get();
+            if(sizeof($programas) > 0) {
+                return redirect()->route('existeProgramaFacultad');
+            } else {
+                $facultad->delete();
+                return redirect()->route('listadoFacultades');
+            }
+            
+        } else {
+            return redirect()->route('noExisteFacultad');
+        }
+
+    }
+
+
+    public function editar($id)
+    {
+        $facultad = Facultad::findOrFail($id);
+        return view('facultades.form_editar', compact('facultad'));
+    }
+
+    public function actualizar(Request $request, $id)
+    {
+        $facultad = Facultad::findOrFail($id);
+        $facultad->codfacultad = $request->input('codfacultad');
+        $facultad->nomfacultad = $request->input('nomfacultad');
+        $facultad->save();
         return redirect()->route('listadoFacultades');
     }
+    
 }

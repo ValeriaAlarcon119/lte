@@ -23,12 +23,14 @@ class Programas extends Controller
         $programas->codprograma = $request->input('codprograma');
         $programas->nomprograma = $request->input('nomprograma');
         $programas->facultad = $request->input('facultad');
+        dump($programas->codprograma);
+        dump($programas->nomprograma);
+        dump($programas->facultad);
         $programas->save();
         return redirect()->route('listadoPrograma');
     }
     
     public function eliminar($id){
-        // Busca el registro en la tabla con el respectivo codigo
         $programas = Programa::findOrFail($id);
         $programas->delete();
         return redirect()->route('listadoPrograma');

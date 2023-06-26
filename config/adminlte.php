@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>s.a</b>',
+    'logo' => '<b>Académica</b>',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -329,22 +329,22 @@ return [
         ],
         [
             'text' => 'Programas',
-            'url'  => '/programas/listado',
+            'url'  => '/programas/programas',
             'icon' => 'fas fa-fw fa-list',
         ],
         [
             'text' => 'Profesores',
-            'url'  => '/profesores/listado',
+            'url'  => '/profesores/profesores',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
             'text' => 'Estudiantes',
-            'url'  => '/estudiantes/listado',
+            'url'  => '/estudiantes/estudiantes',
             'icon' => 'fas fa-fw fa-users',
         ],
         [
             'text' => 'Calificaciones',
-            'url'  => '/calificaciones/listado',
+            'url'  => '/calificaciones/calificaciones',
             'icon' => 'fas fa-fw fa-book',
         ],
         [

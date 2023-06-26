@@ -3,15 +3,18 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
+    <div class="text-center">
     <h1>Programas</h1>
     <p>Listado de Programas</p>
-    <a class ="btn btn-info" href="/programas/registrar">registrar</a>
+
+    <a class ="btn btn-info" href="/programas/registrar">Registrar</a>
     <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Codigo</th>
       <th scope="col">Nombre</th>
+      <th scope="col"></th>
       <th scope="col"></th>
     </tr>
   </thead>
@@ -41,7 +44,7 @@
 @stop
 
 @section('content')
-    <p>Listado de Facultades</p>
+    <p></p>
 
 
 
